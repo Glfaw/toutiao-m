@@ -47,3 +47,26 @@ export const getUserChannels = () => {
     url: '/v1_0/user/channels'
   })
 }
+
+/**
+ * 添加用户频道
+ */
+export const addUserChannel = channel => {
+  return request({
+    method: 'PATCH',
+    url: '/v1_0/user/channels',
+    data: {
+      channels: [channel]
+    }
+  })
+}
+
+/**
+ * 删除用户频道
+ */
+export const deleteUserChannel = channelID => {
+  return request({
+    method: 'DELETE',
+    url: `/v1_0/user/channels/${channelID}`
+  })
+}
